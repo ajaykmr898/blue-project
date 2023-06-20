@@ -1,0 +1,15 @@
+FROM node:10
+
+RUN useradd -ms /bin/bash nodeuser
+RUN usermod -aG node nodeuser
+
+RUN echo -e '#!/bin/bash\nls -lah' > /usr/bin/ll && \
+    chmod +x /usr/bin/ll
+
+RUN npm install -g @angular/cli@7
+
+USER nodeuser
+
+CMD ["tail", "-f"]
+
+WORKDIR /var/www/html/blue-project/
