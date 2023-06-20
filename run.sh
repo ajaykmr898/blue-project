@@ -21,4 +21,4 @@ echo "npm packages installed"
 echo "Compiling $project app... 0%"
 docker exec -d $project npm run local
 for i in {1..10}; do echo "Compiling $project app... $(( 10*i ))%"; sleep 5; done
-echo "App launched, please go to http://localhost:4200"
+echo "App launched, please go to http://localhost:4200 [if not launched and no errors, its compiling]"
